@@ -522,6 +522,22 @@ footer a {
     padding: 28px;
   }
 }
+.hero-photo-wrap {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.hero-photo {
+  width: 100%;
+  max-width: 380px;
+  height: 440px;
+  object-fit: cover;
+  object-position: center 28%;
+  border-radius: 8px;
+  display: block;
+  margin-left: auto;
+  box-shadow: 0 20px 50px #102c291b;
+}
 </style>
 </head>
 
@@ -566,17 +582,15 @@ footer a {
       </div>
     </div>
 
-    <div class="hero-card">
-      <div class="symbol">⌬</div>
-      <div>
-        <small>MY ACADEMIC DIRECTION</small>
-        <h3>Biology meets Intelligence.</h3>
-        <p>
-          Exploring biological systems through genetics,
-          computation and emerging AI technologies.
-        </p>
-      </div>
-    </div>
+   
+<div class="hero-photo-wrap">
+  <img
+    src="Profile.jpg.jpeg"
+    alt="Portrait of Harsh Priyanshu"
+    class="hero-photo"
+  >
+</div>
+
 
   </div>
 </header>
