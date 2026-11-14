@@ -1,0 +1,877 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Academic portfolio of Harsh Priyanshu, B.Tech Genetics and AI student at Lovely Professional University.">
+<title>Harsh Priyanshu | Genetics & AI</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #f7f8f5;
+  --surface: #ffffff;
+  --ink: #172b2b;
+  --muted: #687a76;
+  --green: #176b5b;
+  --light-green: #e3eee9;
+  --line: #e0e8e2;
+  --dark: #102c29;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.7;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: min(1120px, 90%);
+  margin: auto;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(247,248,245,.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav-inner {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 23px;
+  font-weight: 700;
+  color: var(--green);
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.nav-links a:hover {
+  color: var(--green);
+}
+
+.menu-btn {
+  display: none;
+  background: none;
+  border: 0;
+  font-size: 25px;
+  cursor: pointer;
+  color: var(--ink);
+}
+
+.hero {
+  padding: 105px 0 95px;
+  background:
+    radial-gradient(circle at 85% 20%, #dcebe3 0, transparent 30%),
+    var(--bg);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.4fr .8fr;
+  align-items: center;
+  gap: 70px;
+}
+
+.eyebrow {
+  color: var(--green);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 22px;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(43px, 6vw, 72px);
+  letter-spacing: -2px;
+  margin-bottom: 22px;
+}
+
+h1 span {
+  color: var(--green);
+}
+
+.hero-description {
+  max-width: 610px;
+  font-size: 16px;
+  color: var(--muted);
+  margin-bottom: 30px;
+}
+
+.buttons {
+  display: flex;
+  gap: 13px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 13px 23px;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: 700;
+  transition: .25s;
+}
+
+.btn-primary {
+  background: var(--green);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--dark);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border: 1px solid var(--green);
+  color: var(--green);
+}
+
+.btn-outline:hover {
+  background: var(--light-green);
+}
+
+.hero-card {
+  background: var(--dark);
+  color: white;
+  padding: 38px;
+  border-radius: 8px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 20px 50px #102c291b;
+}
+
+.hero-card .symbol {
+  font-size: 65px;
+  color: #a7d0bd;
+}
+
+.hero-card h3 {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.hero-card p {
+  color: #c4d5cf;
+  font-size: 14px;
+}
+
+.hero-card small {
+  color: #a7d0bd;
+  letter-spacing: 2px;
+  font-size: 10px;
+}
+
+section {
+  padding: 85px 0;
+  scroll-margin-top: 75px;
+}
+
+.section-label {
+  color: var(--green);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: clamp(31px, 4vw, 43px);
+  margin-bottom: 18px;
+}
+
+.section-intro {
+  color: var(--muted);
+  max-width: 680px;
+  margin-bottom: 38px;
+  font-size: 15px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.about-text p {
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+
+.info-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 28px;
+  border-radius: 7px;
+}
+
+.info-row {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.info-row:last-child {
+  border: 0;
+}
+
+.info-row span {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.info-row strong {
+  font-size: 14px;
+}
+
+.alternate {
+  background: #edf3ef;
+}
+
+.education-card {
+  background: white;
+  padding: 32px;
+  border-left: 4px solid var(--green);
+  border-radius: 5px;
+  max-width: 800px;
+}
+
+.education-card h3 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.education-card p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.education-card .degree {
+  color: var(--green);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border: 1px solid var(--line);
+  padding: 28px;
+  border-radius: 7px;
+  transition: .25s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px #102c2910;
+}
+
+.card-icon {
+  font-size: 28px;
+  margin-bottom: 17px;
+}
+
+.card h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 20px;
+}
+
+.tag {
+  padding: 7px 12px;
+  background: var(--light-green);
+  color: var(--green);
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.research-card {
+  background: var(--dark);
+  color: white;
+  padding: 38px;
+  border-radius: 7px;
+}
+
+.research-card h3 {
+  font-size: 27px;
+  margin: 12px 0;
+}
+
+.research-card p {
+  color: #d0ded8;
+  font-size: 14px;
+  max-width: 750px;
+}
+
+.research-card .tag {
+  background: #284a42;
+  color: #c7e7d6;
+}
+
+.research-type {
+  color: #a7d0bd;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.conference-list {
+  display: grid;
+  gap: 16px;
+}
+
+.conference-item {
+  background: white;
+  padding: 25px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+.conference-item h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.conference-item p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.conference-item .status {
+  color: var(--green);
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.goals {
+  background: var(--light-green);
+  padding: 45px;
+  border-radius: 8px;
+}
+
+.goals p {
+  color: #526b62;
+  max-width: 800px;
+  font-size: 15px;
+}
+
+.goal-points {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.goal-point {
+  background: #ffffffa6;
+  padding: 16px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.contact-box {
+  background: var(--dark);
+  padding: 55px;
+  border-radius: 8px;
+  color: white;
+}
+
+.contact-box h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.contact-box p {
+  color: #c4d5cf;
+  margin-bottom: 25px;
+  max-width: 600px;
+}
+
+.contact-box .btn {
+  background: #a7d0bd;
+  color: var(--dark);
+}
+
+footer {
+  padding: 30px 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+footer a {
+  color: var(--green);
+  font-weight: 700;
+}
+
+@media(max-width: 800px) {
+  .hero-grid, .about-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 76px;
+    left: 0;
+    right: 0;
+    padding: 25px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+}
+
+@media(max-width: 520px) {
+  .grid-3, .goal-points {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 70px 0;
+  }
+
+  section {
+    padding: 65px 0;
+  }
+
+  .contact-box, .goals {
+    padding: 28px;
+  }
+
+  .hero-card {
+    padding: 28px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a href="#home" class="logo">HP.</a>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation">☰</button>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#interests">Interests</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#conferences">Conferences</a></li>
+      <li><a href="#goals">Goals</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="container hero-grid">
+
+    <div>
+      <p class="eyebrow">Student Portfolio · Genetics & AI</p>
+
+      <h1>Harsh <span>Priyanshu.</span></h1>
+
+      <p class="hero-description">
+        An undergraduate student exploring the intersection of
+        Genetics, Artificial Intelligence and Biological Sciences.
+        Interested in understanding how computational approaches
+        can contribute to biological research.
+      </p>
+
+      <div class="buttons">
+        <a href="#about" class="btn btn-primary">Discover My Journey</a>
+        <a href="#research" class="btn btn-outline">Explore Research</a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <div class="symbol">⌬</div>
+      <div>
+        <small>MY ACADEMIC DIRECTION</small>
+        <h3>Biology meets Intelligence.</h3>
+        <p>
+          Exploring biological systems through genetics,
+          computation and emerging AI technologies.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<section id="about">
+  <div class="container">
+    <p class="section-label">01 / Introduction</p>
+    <h2 class="section-title">About Me</h2>
+
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          Hello! I am Harsh Priyanshu, currently pursuing a
+          Bachelor of Technology in Genetics and Artificial
+          Intelligence at Lovely Professional University, Punjab.
+        </p>
+
+        <p>
+          My academic interests lie in understanding genetics,
+          biological systems and the growing role of artificial
+          intelligence in scientific research.
+        </p>
+
+        <p>
+          I am currently building my foundation in programming
+          and biological sciences while exploring the possibilities
+          of combining computational methods with laboratory-based
+          research.
+        </p>
+
+        <p>
+          This portfolio documents my academic journey, interests,
+          learning experiences and the direction in which I hope
+          to develop.
+        </p>
+      </div>
+
+      <div class="info-card">
+        <div class="info-row">
+          <span>Name</span>
+          <strong>Harsh Priyanshu</strong>
+        </div>
+        <div class="info-row">
+          <span>Degree</span>
+          <strong>B.Tech. Genetics and AI</strong>
+        </div>
+        <div class="info-row">
+          <span>Institution</span>
+          <strong>Lovely Professional University</strong>
+        </div>
+        <div class="info-row">
+          <span>Location</span>
+          <strong>Punjab, India</strong>
+        </div>
+        <div class="info-row">
+          <span>Academic interests</span>
+          <strong>Genetics, AI and Computational Biology</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alternate" id="education">
+  <div class="container">
+    <p class="section-label">02 / Academic Background</p>
+    <h2 class="section-title">Education</h2>
+    <p class="section-intro">
+      My academic foundation and current area of study.
+    </p>
+
+    <div class="education-card">
+      <p class="degree">Undergraduate Programme</p>
+      <h3>Bachelor of Technology</h3>
+      <p><strong>Specialisation:</strong> Genetics and Artificial Intelligence</p>
+      <p><strong>Institution:</strong> Lovely Professional University</p>
+      <p><strong>Location:</strong> Punjab, India</p>
+      <p><strong>Status:</strong> Currently pursuing</p>
+    </div>
+  </div>
+</section>
+
+<section id="interests">
+  <div class="container">
+    <p class="section-label">03 / Areas of Exploration</p>
+    <h2 class="section-title">Academic Interests</h2>
+    <p class="section-intro">
+      Fields I am interested in learning about and exploring
+      throughout my academic journey.
+    </p>
+
+    <div class="grid-3">
+
+      <article class="card">
+        <div class="card-icon">🧬</div>
+        <h3>Genetics & Genomics</h3>
+        <p>
+          Exploring genes, inheritance, genetic variation,
+          genome organisation and their biological significance.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🤖</div>
+        <h3>Artificial Intelligence</h3>
+        <p>
+          Understanding how computational intelligence and
+          machine learning can contribute to scientific problems.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🔬</div>
+        <h3>Biological Research</h3>
+        <p>
+          Developing an understanding of biological processes,
+          experimental approaches and laboratory research.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">💻</div>
+        <h3>Programming</h3>
+        <p>
+          Building programming foundations and exploring
+          computational approaches to problem-solving.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">🧪</div>
+        <h3>Biotechnology</h3>
+        <p>
+          Exploring the applications of biological systems
+          and biotechnology in scientific and environmental contexts.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="card-icon">📊</div>
+        <h3>Bioinformatics</h3>
+        <p>
+          Interested in how computational tools can help
+          analyse and interpret biological information.
+        </p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="alternate" id="research">
+  <div class="container">
+    <p class="section-label">04 / Academic Work</p>
+    <h2 class="section-title">Research & Academic Work</h2>
+    <p class="section-intro">
+      An overview of my developing research interests
+      and academic activities.
+    </p>
+
+    <div class="research-card">
+      <span class="research-type">Conference poster topic</span>
+      <h3>
+        Beyond Plastic Removal: Bacterial Biodegradation
+        Pathways and Their Potential for Aquatic
+        Ecosystem Restoration
+      </h3>
+      <p>
+        A poster topic exploring bacterial biodegradation
+        pathways and their potential role in addressing
+        plastic pollution and supporting aquatic ecosystem
+        restoration.
+      </p>
+      <div class="tag-list">
+        <span class="tag">Environmental Biotechnology</span>
+        <span class="tag">Bacterial Biodegradation</span>
+        <span class="tag">Ecosystem Restoration</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="conferences">
+  <div class="container">
+    <p class="section-label">05 / Academic Exposure</p>
+    <h2 class="section-title">Conferences & Workshops</h2>
+    <p class="section-intro">
+      Academic events and learning opportunities
+      that form part of my university journey.
+    </p>
+
+    <div class="conference-list">
+
+      <article class="conference-item">
+        <span class="status">Poster presentation activity</span>
+        <h3>
+          International Conference on Biological Innovations
+          for Sustainable Development (IC-BIOSUSTAIN-2026)
+        </h3>
+        <p>
+          Poster topic: Beyond Plastic Removal: Bacterial
+          Biodegradation Pathways and Their Potential for
+          Aquatic Ecosystem Restoration.
+        </p>
+      </article>
+
+      <article class="conference-item">
+        <span class="status">Pre-conference workshop</span>
+        <h3>
+          1st International Conference on Advanced
+          Nanotechnology and Nanomaterials (ICANN 2026)
+        </h3>
+        <p>
+          Participation in the pre-conference workshop
+          as part of academic exposure to nanotechnology
+          and nanomaterials.
+        </p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="alternate" id="goals">
+  <div class="container">
+    <p class="section-label">06 / Looking Ahead</p>
+    <h2 class="section-title">Future Aspirations</h2>
+
+    <div class="goals">
+      <h3 style="font-size:27px; margin-bottom:16px;">
+        Connecting Genetics with Artificial Intelligence
+      </h3>
+
+      <p>
+        My long-term academic goal is to explore the
+        intersection of genetics, artificial intelligence
+        and computational biological research.
+        I hope to develop the knowledge and practical
+        understanding needed to contribute to this
+        interdisciplinary field.
+      </p>
+
+      <div class="goal-points">
+        <div class="goal-point">01 · Strengthen programming foundations</div>
+        <div class="goal-point">02 · Develop computational skills</div>
+        <div class="goal-point">03 · Explore Bioinformatics</div>
+        <div class="goal-point">04 · Understand AI-driven Genomics</div>
+        <div class="goal-point">05 · Gain research experience</div>
+        <div class="goal-point">06 · Pursue higher studies in Computational Biology</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="contact-box">
+      <p class="section-label">07 / Connect</p>
+      <h2>Thank you for visiting.</h2>
+      <p>
+        This portfolio represents my ongoing academic journey.
+        As I continue learning and gaining experience, I hope
+        to keep updating it with new projects, skills and
+        research activities.
+      </p>
+      <a class="btn" href="https://github.com/HarshPriyanshu19"
+         target="_blank" rel="noopener noreferrer">
+        Visit My GitHub Profile ↗
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Harsh Priyanshu · Academic Portfolio</p>
+    <p>Genetics · Artificial Intelligence · Biological Sciences</p>
+  </div>
+</footer>
+
+<script>
+const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
+
+menuBtn.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+  });
+});
+</script>
+
+</body>
+</html>
